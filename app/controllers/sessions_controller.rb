@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         ghs = GithubService.new
         ghs.authenticate!(ENV["GITHUB_CLIENT"], ENV["GITHUB_SECRET"], params[:code])
         session[:username] = ghs.get_username
-
+#binding.pry
         redirect_to '/'
     end
 end
